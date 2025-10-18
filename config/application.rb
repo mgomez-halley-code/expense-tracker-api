@@ -40,5 +40,13 @@ module SpendlyApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Sidekiq configuration for ActiveJob
+    config.active_job.queue_adapter = :sidekiq
+
+    # Optional: global Sidekiq Redis configuration
+    config.sidekiq = {
+      url: ENV.fetch('REDIS_URL') { 'redis://localhost:6379/0' }
+    }
   end
 end
