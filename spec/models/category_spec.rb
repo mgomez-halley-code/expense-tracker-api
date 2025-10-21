@@ -6,8 +6,7 @@ RSpec.describe Category, type: :model do
 
   describe 'associations' do
     it { should belong_to(:user) }
-    # TODO:
-    # it { should have_many(:expenses).dependent(:destroy) }
+    it { should have_many(:expenses).dependent(:destroy) }
   end
 
   describe 'validations' do

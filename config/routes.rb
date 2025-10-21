@@ -10,8 +10,8 @@ Rails.application.routes.draw do
       end
 
       get 'profile', to: 'users#profile'
-      resources :categories, only: [:index, :create, :update, :destroy, :show]
-      resources :expenses, only: [:index, :create]
+      resources :categories, only: [:index, :show, :create, :update, :destroy]
+      resources :expenses, only: [:index, :show, :create, :update, :destroy]
     end
   end
 end
